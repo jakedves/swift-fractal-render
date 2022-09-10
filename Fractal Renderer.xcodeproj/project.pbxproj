@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		5025F02628CD36A500234A31 /* Fractal_RendererApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025F02528CD36A500234A31 /* Fractal_RendererApp.swift */; };
-		5025F02828CD36A500234A31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025F02728CD36A500234A31 /* ContentView.swift */; };
+		5025F02828CD36A500234A31 /* FractalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025F02728CD36A500234A31 /* FractalView.swift */; };
 		5025F02A28CD36A700234A31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5025F02928CD36A700234A31 /* Assets.xcassets */; };
 		5025F02D28CD36A700234A31 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5025F02C28CD36A700234A31 /* Preview Assets.xcassets */; };
+		5025F03628CD455A00234A31 /* FractalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025F03528CD455A00234A31 /* FractalRenderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5025F02228CD36A500234A31 /* Fractal Renderer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fractal Renderer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5025F02528CD36A500234A31 /* Fractal_RendererApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fractal_RendererApp.swift; sourceTree = "<group>"; };
-		5025F02728CD36A500234A31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5025F02728CD36A500234A31 /* FractalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractalView.swift; sourceTree = "<group>"; };
 		5025F02928CD36A700234A31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5025F02C28CD36A700234A31 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5025F03528CD455A00234A31 /* FractalRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FractalRenderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +53,9 @@
 		5025F02428CD36A500234A31 /* Fractal Renderer */ = {
 			isa = PBXGroup;
 			children = (
+				5025F03528CD455A00234A31 /* FractalRenderer.swift */,
 				5025F02528CD36A500234A31 /* Fractal_RendererApp.swift */,
-				5025F02728CD36A500234A31 /* ContentView.swift */,
+				5025F02728CD36A500234A31 /* FractalView.swift */,
 				5025F02928CD36A700234A31 /* Assets.xcassets */,
 				5025F02B28CD36A700234A31 /* Preview Content */,
 			);
@@ -137,7 +140,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5025F02828CD36A500234A31 /* ContentView.swift in Sources */,
+				5025F03628CD455A00234A31 /* FractalRenderer.swift in Sources */,
+				5025F02828CD36A500234A31 /* FractalView.swift in Sources */,
 				5025F02628CD36A500234A31 /* Fractal_RendererApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

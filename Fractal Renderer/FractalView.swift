@@ -19,8 +19,8 @@ struct FractalView: View {
                     renderer.render(date: timelineDate)
                     
                     for point in renderer.points {
-                        let x = Constants.margin * point.x * size.width
-                        let y = Constants.margin * point.y * size.height
+                        let x = point.x * size.width
+                        let y = point.y * size.height
                         
                         context.draw(Text("•"), at: CGPoint(x: x, y: y))
                     }
@@ -32,10 +32,6 @@ struct FractalView: View {
             .ignoresSafeArea()
             //.background(.black)
         }
-    }
-    
-    private struct Constants {
-        static let margin: CGFloat = 0.95
     }
 }
 
