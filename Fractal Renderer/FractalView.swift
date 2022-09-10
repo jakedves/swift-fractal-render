@@ -22,7 +22,8 @@ struct FractalView: View {
                         let x = point.x * size.width
                         let y = point.y * size.height
                         
-                        context.draw(Text("•"), at: CGPoint(x: x, y: y))
+                        context.draw(Text("•").foregroundColor(point.color),
+                                     at: CGPoint(x: x, y: y))
                     }
                     // drawing code
                 }
@@ -30,7 +31,7 @@ struct FractalView: View {
                           y: geo.size.height * 0.9)
             }
             .ignoresSafeArea()
-            //.background(.black)
+            .background(.black)
         }
     }
 }

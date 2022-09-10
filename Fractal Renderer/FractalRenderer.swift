@@ -12,9 +12,10 @@ import SwiftUI
  representation of this triangle
  */
 class FractalRenderer: ObservableObject {
-    private var initialTriangle: [CGPoint]
-    private var last: CGPoint
-    var points: [CGPoint]
+    private static let colors: [Color] = [.red, .green, .blue]
+    private var initialTriangle: [ColouredPoint]
+    private var last: ColouredPoint
+    var points: [ColouredPoint]
     
     /**
      I've developed this alogrithm based on
@@ -26,8 +27,11 @@ class FractalRenderer: ObservableObject {
      The rest happens in `self.render()`
      */
     init() {
-        self.points = [CGPoint(x: 1.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.5, y: cos(60.0 / 180.0 * Double.pi))]
-        self.initialTriangle = [CGPoint(x: 1.0, y: 0.0), CGPoint(x: 0.0, y: 0.0), CGPoint(x: 0.5, y: cos(60.0 / 180.0 * Double.pi))]
+        let initials = [ColouredPoint(x: 1.0, y: 0.0, color: .blue),
+                       ColouredPoint(x: 0.0, y: 0.0, color: .red),
+                       ColouredPoint(x: 0.5, y: cos(60.0 / 180.0 * Double.pi), color: .green)]
+        self.points = initials
+        self.initialTriangle = initials
         
         // adds one further random point
         let newPoint = FractalRenderer.getRandomPoint()
@@ -52,21 +56,30 @@ class FractalRenderer: ObservableObject {
     /**
      Generates a random CGPoint between zero and one
      */
-    static func getRandomPoint() -> CGPoint {
+    private static func getRandomPoint() -> ColouredPoint {
         let range = 0.0...1.0
         let x = Double.random(in: range)
         let y = Double.random(in: range)
         
-        return CGPoint(x: x, y: y)
+        return ColouredPoint(x: x, y: y, color: colors.randomElement()!)
     }
     
     /**
      Calculates the halfway point between two points
      */
-    static func getHalfwayPoint(between first: CGPoint, and second: CGPoint) -> CGPoint {
+    private static func getHalfwayPoint(between first: ColouredPoint, and second: ColouredPoint) -> ColouredPoint {
         let x = (first.x + second.x) / 2.0
         let y = (first.y + second.y) / 2.0
         
-        return CGPoint(x: x, y: y)
+        return ColouredPoint(x: x, y: y, color: colors.randomElement()!)
     }
+}
+
+/**
+ A coloured CGPoint
+ */
+struct ColouredPoint {
+    let x: CGFloat
+    let y: CGFloat
+    let color: Color
 }
