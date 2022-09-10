@@ -15,6 +15,7 @@ struct FractalView: View {
             // this means rerender this view very fast (60-120hz)
             TimelineView(.animation) { timeline in
                 Canvas { context, size in
+                    let data = timeline.date.timeIntervalSinceReferenceDate
                     renderer.render()
                     
                     for point in renderer.points {
