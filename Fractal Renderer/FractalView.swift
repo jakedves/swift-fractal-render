@@ -15,7 +15,9 @@ struct FractalView: View {
             // this means rerender this view very fast (60-120hz)
             TimelineView(.animation) { timeline in
                 Canvas { context, size in
-                    let data = timeline.date.timeIntervalSinceReferenceDate
+                    // this code used to stop SwiftUI optimisations of thinking it doesn't
+                    // need to rerender
+                    let _ = timeline.date.timeIntervalSinceReferenceDate
                     renderer.render()
                     
                     for point in renderer.points {
