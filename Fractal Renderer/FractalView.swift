@@ -21,13 +21,13 @@ struct FractalView: View {
                     renderer.render()
                     
                     // drawing code
-                    for point in renderer.points {
+                    renderer.points.forEach({ point in
                         let x = point.x * size.width
                         let y = point.y * size.height
                         
-                        context.draw(Text(".").foregroundColor(.white),
+                        context.draw(Text(".").foregroundColor(point.color),
                                      at: CGPoint(x: x, y: y))
-                    }
+                    })
                 }
                 .position(x: geo.size.width / 2.0,
                           y: geo.size.height * 0.9)
