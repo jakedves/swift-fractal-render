@@ -46,11 +46,13 @@ class FractalRenderer: ObservableObject {
         2. Draw a point midway between that point and the previously drawn point
      */
     func render() {
-        let picked = self.initialTriangle.randomElement()
-        let newPoint = FractalRenderer.getHalfwayPoint(between: picked!, and: last)
-        
-        self.points.append(newPoint)
-        self.last = newPoint
+        for _ in 0...5 {
+            let picked = self.initialTriangle.randomElement()
+            let newPoint = FractalRenderer.getHalfwayPoint(between: picked!, and: last)
+            
+            self.points.append(newPoint)
+            self.last = newPoint
+        }
     }
     
     /**
