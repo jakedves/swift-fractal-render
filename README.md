@@ -4,7 +4,9 @@ Renders The Sierpinski Triangle fractal in SwiftUI for iOS.
 
 **Code below GIF.** GIF at _20x_ speed.
 
-![ezgif com-gif-maker-2](https://user-images.githubusercontent.com/75232368/189527200-f0473d23-899d-4cb3-844d-12d0da86fe6b.gif)
+<p align="center">
+ <img src="/gif.gif" width="250" height="450"/>
+</p>
 
 The code that sets up the triangle:
 ```swift
